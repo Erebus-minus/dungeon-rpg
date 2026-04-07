@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\main.cpp.obj -c C:\\dungeon-rpg\\main.cpp",
+  "file": "C:/dungeon-rpg/main.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/main.cpp.obj"
+}
+]
