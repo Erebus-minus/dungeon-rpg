@@ -42,7 +42,7 @@ int StandardEnemy::determineEnemySpd()
 {
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(this.enemySpdMinMax.first, this.enemySpdMinMax.second);
+    std::uniform_int_distribution<> distrib(enemySpdMinMax.first, enemySpdMinMax.second);
     return distrib(gen);
 }
 char StandardEnemy::getSymbol() const

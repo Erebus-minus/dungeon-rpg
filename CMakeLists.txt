@@ -5,8 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(dungeon_rpg
     main.cpp
-        standardEnemies/StandardEnemy.h
-        standardEnemies/StandardEnemy.cpp
-
+    standardEnemies/StandardEnemy.cpp
+    Entity.cpp
 
 )
