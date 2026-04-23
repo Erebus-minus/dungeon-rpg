@@ -9,7 +9,7 @@
 #include <utility>
 
 class StandardEnemy {
-private:
+protected:
     //Basic Info
     std::pair<int,int> position; //pos_x,pos_y
     int hp = -1;
