@@ -128,6 +128,78 @@ dungeon_rpg/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/build
 .PHONY : dungeon_rpg/fast
 
+Entity/Entity.obj: Entity/Entity.cpp.obj
+.PHONY : Entity/Entity.obj
+
+# target to build an object file
+Entity/Entity.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj
+.PHONY : Entity/Entity.cpp.obj
+
+Entity/Entity.i: Entity/Entity.cpp.i
+.PHONY : Entity/Entity.i
+
+# target to preprocess a source file
+Entity/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.i
+.PHONY : Entity/Entity.cpp.i
+
+Entity/Entity.s: Entity/Entity.cpp.s
+.PHONY : Entity/Entity.s
+
+# target to generate assembly for a file
+Entity/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.s
+.PHONY : Entity/Entity.cpp.s
+
+Player/Player.obj: Player/Player.cpp.obj
+.PHONY : Player/Player.obj
+
+# target to build an object file
+Player/Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj
+.PHONY : Player/Player.cpp.obj
+
+Player/Player.i: Player/Player.cpp.i
+.PHONY : Player/Player.i
+
+# target to preprocess a source file
+Player/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.i
+.PHONY : Player/Player.cpp.i
+
+Player/Player.s: Player/Player.cpp.s
+.PHONY : Player/Player.s
+
+# target to generate assembly for a file
+Player/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.s
+.PHONY : Player/Player.cpp.s
+
+UI/UI.obj: UI/UI.cpp.obj
+.PHONY : UI/UI.obj
+
+# target to build an object file
+UI/UI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj
+.PHONY : UI/UI.cpp.obj
+
+UI/UI.i: UI/UI.cpp.i
+.PHONY : UI/UI.i
+
+# target to preprocess a source file
+UI/UI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.i
+.PHONY : UI/UI.cpp.i
+
+UI/UI.s: UI/UI.cpp.s
+.PHONY : UI/UI.s
+
+# target to generate assembly for a file
+UI/UI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.s
+.PHONY : UI/UI.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -152,6 +224,126 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+standardEnemies/Goblin.obj: standardEnemies/Goblin.cpp.obj
+.PHONY : standardEnemies/Goblin.obj
+
+# target to build an object file
+standardEnemies/Goblin.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj
+.PHONY : standardEnemies/Goblin.cpp.obj
+
+standardEnemies/Goblin.i: standardEnemies/Goblin.cpp.i
+.PHONY : standardEnemies/Goblin.i
+
+# target to preprocess a source file
+standardEnemies/Goblin.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.i
+.PHONY : standardEnemies/Goblin.cpp.i
+
+standardEnemies/Goblin.s: standardEnemies/Goblin.cpp.s
+.PHONY : standardEnemies/Goblin.s
+
+# target to generate assembly for a file
+standardEnemies/Goblin.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.s
+.PHONY : standardEnemies/Goblin.cpp.s
+
+standardEnemies/Skeleton.obj: standardEnemies/Skeleton.cpp.obj
+.PHONY : standardEnemies/Skeleton.obj
+
+# target to build an object file
+standardEnemies/Skeleton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj
+.PHONY : standardEnemies/Skeleton.cpp.obj
+
+standardEnemies/Skeleton.i: standardEnemies/Skeleton.cpp.i
+.PHONY : standardEnemies/Skeleton.i
+
+# target to preprocess a source file
+standardEnemies/Skeleton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.i
+.PHONY : standardEnemies/Skeleton.cpp.i
+
+standardEnemies/Skeleton.s: standardEnemies/Skeleton.cpp.s
+.PHONY : standardEnemies/Skeleton.s
+
+# target to generate assembly for a file
+standardEnemies/Skeleton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.s
+.PHONY : standardEnemies/Skeleton.cpp.s
+
+standardEnemies/Slime.obj: standardEnemies/Slime.cpp.obj
+.PHONY : standardEnemies/Slime.obj
+
+# target to build an object file
+standardEnemies/Slime.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj
+.PHONY : standardEnemies/Slime.cpp.obj
+
+standardEnemies/Slime.i: standardEnemies/Slime.cpp.i
+.PHONY : standardEnemies/Slime.i
+
+# target to preprocess a source file
+standardEnemies/Slime.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.i
+.PHONY : standardEnemies/Slime.cpp.i
+
+standardEnemies/Slime.s: standardEnemies/Slime.cpp.s
+.PHONY : standardEnemies/Slime.s
+
+# target to generate assembly for a file
+standardEnemies/Slime.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.s
+.PHONY : standardEnemies/Slime.cpp.s
+
+standardEnemies/StandardEnemy.obj: standardEnemies/StandardEnemy.cpp.obj
+.PHONY : standardEnemies/StandardEnemy.obj
+
+# target to build an object file
+standardEnemies/StandardEnemy.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj
+.PHONY : standardEnemies/StandardEnemy.cpp.obj
+
+standardEnemies/StandardEnemy.i: standardEnemies/StandardEnemy.cpp.i
+.PHONY : standardEnemies/StandardEnemy.i
+
+# target to preprocess a source file
+standardEnemies/StandardEnemy.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.i
+.PHONY : standardEnemies/StandardEnemy.cpp.i
+
+standardEnemies/StandardEnemy.s: standardEnemies/StandardEnemy.cpp.s
+.PHONY : standardEnemies/StandardEnemy.s
+
+# target to generate assembly for a file
+standardEnemies/StandardEnemy.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.s
+.PHONY : standardEnemies/StandardEnemy.cpp.s
+
+standardEnemies/Troll.obj: standardEnemies/Troll.cpp.obj
+.PHONY : standardEnemies/Troll.obj
+
+# target to build an object file
+standardEnemies/Troll.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj
+.PHONY : standardEnemies/Troll.cpp.obj
+
+standardEnemies/Troll.i: standardEnemies/Troll.cpp.i
+.PHONY : standardEnemies/Troll.i
+
+# target to preprocess a source file
+standardEnemies/Troll.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.i
+.PHONY : standardEnemies/Troll.cpp.i
+
+standardEnemies/Troll.s: standardEnemies/Troll.cpp.s
+.PHONY : standardEnemies/Troll.s
+
+# target to generate assembly for a file
+standardEnemies/Troll.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\dungeon_rpg.dir\build.make CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.s
+.PHONY : standardEnemies/Troll.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,9 +353,33 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... dungeon_rpg
+	@echo ... Entity/Entity.obj
+	@echo ... Entity/Entity.i
+	@echo ... Entity/Entity.s
+	@echo ... Player/Player.obj
+	@echo ... Player/Player.i
+	@echo ... Player/Player.s
+	@echo ... UI/UI.obj
+	@echo ... UI/UI.i
+	@echo ... UI/UI.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... standardEnemies/Goblin.obj
+	@echo ... standardEnemies/Goblin.i
+	@echo ... standardEnemies/Goblin.s
+	@echo ... standardEnemies/Skeleton.obj
+	@echo ... standardEnemies/Skeleton.i
+	@echo ... standardEnemies/Skeleton.s
+	@echo ... standardEnemies/Slime.obj
+	@echo ... standardEnemies/Slime.i
+	@echo ... standardEnemies/Slime.s
+	@echo ... standardEnemies/StandardEnemy.obj
+	@echo ... standardEnemies/StandardEnemy.i
+	@echo ... standardEnemies/StandardEnemy.s
+	@echo ... standardEnemies/Troll.obj
+	@echo ... standardEnemies/Troll.i
+	@echo ... standardEnemies/Troll.s
 .PHONY : help
 
 

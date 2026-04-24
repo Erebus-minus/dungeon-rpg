@@ -4,5 +4,53 @@
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\main.cpp.obj -c C:\\dungeon-rpg\\main.cpp",
   "file": "C:/dungeon-rpg/main.cpp",
   "output": "CMakeFiles/dungeon_rpg.dir/main.cpp.obj"
+},
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\Entity\\Entity.cpp.obj -c C:\\dungeon-rpg\\Entity\\Entity.cpp",
+  "file": "C:/dungeon-rpg/Entity/Entity.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj"
+},
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\UI\\UI.cpp.obj -c C:\\dungeon-rpg\\UI\\UI.cpp",
+  "file": "C:/dungeon-rpg/UI/UI.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj"
+},
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\Player\\Player.cpp.obj -c C:\\dungeon-rpg\\Player\\Player.cpp",
+  "file": "C:/dungeon-rpg/Player/Player.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj"
+},
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\standardEnemies\\StandardEnemy.cpp.obj -c C:\\dungeon-rpg\\standardEnemies\\StandardEnemy.cpp",
+  "file": "C:/dungeon-rpg/standardEnemies/StandardEnemy.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj"
+},
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\standardEnemies\\Slime.cpp.obj -c C:\\dungeon-rpg\\standardEnemies\\Slime.cpp",
+  "file": "C:/dungeon-rpg/standardEnemies/Slime.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj"
+},
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\standardEnemies\\Skeleton.cpp.obj -c C:\\dungeon-rpg\\standardEnemies\\Skeleton.cpp",
+  "file": "C:/dungeon-rpg/standardEnemies/Skeleton.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj"
+},
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\standardEnemies\\Goblin.cpp.obj -c C:\\dungeon-rpg\\standardEnemies\\Goblin.cpp",
+  "file": "C:/dungeon-rpg/standardEnemies/Goblin.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj"
+},
+{
+  "directory": "C:/dungeon-rpg/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\dungeon_rpg.dir\\standardEnemies\\Troll.cpp.obj -c C:\\dungeon-rpg\\standardEnemies\\Troll.cpp",
+  "file": "C:/dungeon-rpg/standardEnemies/Troll.cpp",
+  "output": "CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj"
 }
 ]

@@ -85,19 +85,147 @@ CMakeFiles/dungeon_rpg.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/main.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\main.cpp -o CMakeFiles\dungeon_rpg.dir\main.cpp.s
 
+CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj: CMakeFiles/dungeon_rpg.dir/flags.make
+CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj: C:/dungeon-rpg/Entity/Entity.cpp
+CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj: CMakeFiles/dungeon_rpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj -MF CMakeFiles\dungeon_rpg.dir\Entity\Entity.cpp.obj.d -o CMakeFiles\dungeon_rpg.dir\Entity\Entity.cpp.obj -c C:\dungeon-rpg\Entity\Entity.cpp
+
+CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dungeon-rpg\Entity\Entity.cpp > CMakeFiles\dungeon_rpg.dir\Entity\Entity.cpp.i
+
+CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\Entity\Entity.cpp -o CMakeFiles\dungeon_rpg.dir\Entity\Entity.cpp.s
+
+CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj: CMakeFiles/dungeon_rpg.dir/flags.make
+CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj: C:/dungeon-rpg/UI/UI.cpp
+CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj: CMakeFiles/dungeon_rpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj -MF CMakeFiles\dungeon_rpg.dir\UI\UI.cpp.obj.d -o CMakeFiles\dungeon_rpg.dir\UI\UI.cpp.obj -c C:\dungeon-rpg\UI\UI.cpp
+
+CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dungeon-rpg\UI\UI.cpp > CMakeFiles\dungeon_rpg.dir\UI\UI.cpp.i
+
+CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\UI\UI.cpp -o CMakeFiles\dungeon_rpg.dir\UI\UI.cpp.s
+
+CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj: CMakeFiles/dungeon_rpg.dir/flags.make
+CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj: C:/dungeon-rpg/Player/Player.cpp
+CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj: CMakeFiles/dungeon_rpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj -MF CMakeFiles\dungeon_rpg.dir\Player\Player.cpp.obj.d -o CMakeFiles\dungeon_rpg.dir\Player\Player.cpp.obj -c C:\dungeon-rpg\Player\Player.cpp
+
+CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dungeon-rpg\Player\Player.cpp > CMakeFiles\dungeon_rpg.dir\Player\Player.cpp.i
+
+CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\Player\Player.cpp -o CMakeFiles\dungeon_rpg.dir\Player\Player.cpp.s
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj: CMakeFiles/dungeon_rpg.dir/flags.make
+CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj: C:/dungeon-rpg/standardEnemies/StandardEnemy.cpp
+CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj: CMakeFiles/dungeon_rpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj -MF CMakeFiles\dungeon_rpg.dir\standardEnemies\StandardEnemy.cpp.obj.d -o CMakeFiles\dungeon_rpg.dir\standardEnemies\StandardEnemy.cpp.obj -c C:\dungeon-rpg\standardEnemies\StandardEnemy.cpp
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dungeon-rpg\standardEnemies\StandardEnemy.cpp > CMakeFiles\dungeon_rpg.dir\standardEnemies\StandardEnemy.cpp.i
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\standardEnemies\StandardEnemy.cpp -o CMakeFiles\dungeon_rpg.dir\standardEnemies\StandardEnemy.cpp.s
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj: CMakeFiles/dungeon_rpg.dir/flags.make
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj: C:/dungeon-rpg/standardEnemies/Slime.cpp
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj: CMakeFiles/dungeon_rpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj -MF CMakeFiles\dungeon_rpg.dir\standardEnemies\Slime.cpp.obj.d -o CMakeFiles\dungeon_rpg.dir\standardEnemies\Slime.cpp.obj -c C:\dungeon-rpg\standardEnemies\Slime.cpp
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dungeon-rpg\standardEnemies\Slime.cpp > CMakeFiles\dungeon_rpg.dir\standardEnemies\Slime.cpp.i
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\standardEnemies\Slime.cpp -o CMakeFiles\dungeon_rpg.dir\standardEnemies\Slime.cpp.s
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj: CMakeFiles/dungeon_rpg.dir/flags.make
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj: C:/dungeon-rpg/standardEnemies/Skeleton.cpp
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj: CMakeFiles/dungeon_rpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj -MF CMakeFiles\dungeon_rpg.dir\standardEnemies\Skeleton.cpp.obj.d -o CMakeFiles\dungeon_rpg.dir\standardEnemies\Skeleton.cpp.obj -c C:\dungeon-rpg\standardEnemies\Skeleton.cpp
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dungeon-rpg\standardEnemies\Skeleton.cpp > CMakeFiles\dungeon_rpg.dir\standardEnemies\Skeleton.cpp.i
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\standardEnemies\Skeleton.cpp -o CMakeFiles\dungeon_rpg.dir\standardEnemies\Skeleton.cpp.s
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj: CMakeFiles/dungeon_rpg.dir/flags.make
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj: C:/dungeon-rpg/standardEnemies/Goblin.cpp
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj: CMakeFiles/dungeon_rpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj -MF CMakeFiles\dungeon_rpg.dir\standardEnemies\Goblin.cpp.obj.d -o CMakeFiles\dungeon_rpg.dir\standardEnemies\Goblin.cpp.obj -c C:\dungeon-rpg\standardEnemies\Goblin.cpp
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dungeon-rpg\standardEnemies\Goblin.cpp > CMakeFiles\dungeon_rpg.dir\standardEnemies\Goblin.cpp.i
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\standardEnemies\Goblin.cpp -o CMakeFiles\dungeon_rpg.dir\standardEnemies\Goblin.cpp.s
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj: CMakeFiles/dungeon_rpg.dir/flags.make
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj: C:/dungeon-rpg/standardEnemies/Troll.cpp
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj: CMakeFiles/dungeon_rpg.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj -MF CMakeFiles\dungeon_rpg.dir\standardEnemies\Troll.cpp.obj.d -o CMakeFiles\dungeon_rpg.dir\standardEnemies\Troll.cpp.obj -c C:\dungeon-rpg\standardEnemies\Troll.cpp
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dungeon-rpg\standardEnemies\Troll.cpp > CMakeFiles\dungeon_rpg.dir\standardEnemies\Troll.cpp.i
+
+CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dungeon-rpg\standardEnemies\Troll.cpp -o CMakeFiles\dungeon_rpg.dir\standardEnemies\Troll.cpp.s
+
 # Object files for target dungeon_rpg
 dungeon_rpg_OBJECTS = \
-"CMakeFiles/dungeon_rpg.dir/main.cpp.obj"
+"CMakeFiles/dungeon_rpg.dir/main.cpp.obj" \
+"CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj" \
+"CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj" \
+"CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj" \
+"CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj" \
+"CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj" \
+"CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj" \
+"CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj" \
+"CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj"
 
 # External object files for target dungeon_rpg
 dungeon_rpg_EXTERNAL_OBJECTS =
 
 dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/main.cpp.obj
+dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/Entity/Entity.cpp.obj
+dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.obj
+dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.obj
+dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/standardEnemies/StandardEnemy.cpp.obj
+dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/standardEnemies/Slime.cpp.obj
+dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/standardEnemies/Skeleton.cpp.obj
+dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/standardEnemies/Goblin.cpp.obj
+dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/standardEnemies/Troll.cpp.obj
 dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/build.make
 dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/linkLibs.rsp
 dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/objects1.rsp
 dungeon_rpg.exe: CMakeFiles/dungeon_rpg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable dungeon_rpg.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\dungeon-rpg\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable dungeon_rpg.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\dungeon_rpg.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

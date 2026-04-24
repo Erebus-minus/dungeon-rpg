@@ -7,6 +7,7 @@ add_executable(dungeon_rpg
     main.cpp
     Entity/Entity.cpp
     UI/UI.cpp
+    Player/Player.cpp
     standardEnemies/StandardEnemy.cpp
     standardEnemies/Slime.cpp
     standardEnemies/Skeleton.cpp
