@@ -3,7 +3,7 @@
 //
 
 #include "StandardEnemy.h"
-
+//Constructors
 StandardEnemy::StandardEnemy()= default;
 StandardEnemy::StandardEnemy(const std::pair<int,int>& pos, //pos_x,pos_y
                             const std::string& name,
@@ -21,6 +21,43 @@ StandardEnemy::StandardEnemy(const std::pair<int,int>& pos, //pos_x,pos_y
     symbol = symbolASCII;
 }
 
+StandardEnemy::StandardEnemy(const std::pair<int, int> pos, std::string &name, int enemyHealth, int attackDamage, std::pair<int, int> enemySpeedMinAndMax, char symbolASCII) {
+    position.first = pos.first;
+    position.second = pos.second;
+    this->name = name;
+    hp = enemyHealth;
+    atkDmg = attackDamage;
+    enemySpdMinMax.first = enemySpeedMinAndMax.first;
+    enemySpdMinMax.second = enemySpeedMinAndMax.second;
+    symbol = symbolASCII;
+}
+
+StandardEnemy::StandardEnemy(const std::pair<int, int> &pos, std::string &name, int enemyHealth, int attackDamage, std::pair<int, int> enemySpeedMinAndMax, char symbolASCII) {
+    position.first = pos.first;
+    position.second = pos.second;
+    this->name = name;
+    hp = enemyHealth;
+    atkDmg = attackDamage;
+    enemySpdMinMax.first = enemySpeedMinAndMax.first;
+    enemySpdMinMax.second=enemySpeedMinAndMax.second;
+    symbol = symbolASCII;
+}
+
+
+
+StandardEnemy::StandardEnemy(int pos_x, int pos_y, std::string& name, int enemyHealth, int attackDamage, std::pair<int,int> enemySpeedMinAndMax, char symbolASCII)
+{
+    position.first = pos_x;
+    position.second = pos_y;
+    this->name = name;
+    hp = enemyHealth;
+    atkDmg = attackDamage;
+    enemySpdMinMax.first = enemySpeedMinAndMax.first;
+    enemySpdMinMax.second = enemySpeedMinAndMax.second;
+    symbol = symbolASCII;
+}
+
+//Standard Functions for All Enemies
 void StandardEnemy::setPosition(const std::pair<int,int>& pos) //pos_x,pos_y
 {
     position.first = pos.first;
@@ -38,11 +75,11 @@ int StandardEnemy::getAtkDmg() const
 {
     return atkDmg;
 }
-int StandardEnemy::determineEnemySpd()
+int StandardEnemy::determineEnemySpd() //I have tried making this const before, but CLion keeps freaking out.
 {
     static std::random_device rd;
     static std::mt19937 gen(rd());
-    std::uniform_int_distribution<> distrib(enemySpdMinMax.first, enemySpdMinMax.second);
+    std::uniform_int_distribution<> distrib(this->enemySpdMinMax.first, this->enemySpdMinMax.second);
     return distrib(gen);
 }
 char StandardEnemy::getSymbol() const
@@ -58,7 +95,7 @@ std::pair<int,int> StandardEnemy::getPosition() const {
     return {position.first, position.second};
 }
 bool StandardEnemy::isDead() const {
-    if (hp == 0)
+    if (hp <= 0)
     {
         return true;
     }

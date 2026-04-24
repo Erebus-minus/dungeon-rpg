@@ -9,7 +9,7 @@
 #include <utility>
 
 class StandardEnemy {
-private:
+protected:
     //Basic Info
     std::pair<int,int> position; //pos_x,pos_y
     int hp = -1;
@@ -18,6 +18,8 @@ private:
     std::string name = "Enemy";
     char symbol = 'E';
 public:
+
+
     StandardEnemy();
 
     StandardEnemy(const std::pair<int, int> &pos, const std::string &name, int enemyHealth, int attackDamage,
@@ -33,7 +35,7 @@ public:
 
     void setPosition(const std::pair<int,int>& pos);
     [[nodiscard]] int getHP() const;
-    void changeHP(int value);
+    virtual void changeHP(int value);
     [[nodiscard]] int getAtkDmg() const;
 
     int determineEnemySpd();
@@ -41,7 +43,7 @@ public:
     [[nodiscard]] std::string getName() const;
 
     [[nodiscard]] std::pair<int,int> getPosition() const;
-    [[nodiscard]] bool isDead() const;
+    [[nodiscard]]  virtual bool isDead() const;
 
 };
 
