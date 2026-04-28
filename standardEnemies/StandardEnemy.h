@@ -36,7 +36,7 @@ public:
     void setPosition(const std::pair<int,int>& pos);
     [[nodiscard]] int getHP() const;
     virtual void changeHP(int value);
-    [[nodiscard]] int getAtkDmg() const;
+    [[nodiscard]] virtual int getAtkDmg() const;
 
     int determineEnemySpd();
     [[nodiscard]] char getSymbol() const;
