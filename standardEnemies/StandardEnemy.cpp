@@ -94,7 +94,7 @@ std::string StandardEnemy::getName() const
 std::pair<int,int> StandardEnemy::getPosition() const {
     return {position.first, position.second};
 }
-bool StandardEnemy::isDead() const {
+bool StandardEnemy::isDead() {
     if (hp <= 0)
     {
         return true;

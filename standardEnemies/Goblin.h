@@ -10,11 +10,13 @@
 class Goblin: public StandardEnemy {
 
 private:
-    int chanceToRun = 0.1; //Goblins are generally pathetic creatures
+    double chanceToRun = 0.1; //Goblins are generally pathetic creatures
                            //Whenever they are hit, they have a chance of simply fleeing.
-                           //Rn, the code will just kill them, but if you guys wanna change it feel free to
+                           //Rn, the code will just kills them
 public:
     void changeHP(int value) override;
+    //I did want to implement a system to allow them to call for backup
+    //However I didn't want to force anyone to have to implement that
 };
 
 
