@@ -43,7 +43,7 @@ public:
     [[nodiscard]] std::string getName() const;
 
     [[nodiscard]] std::pair<int,int> getPosition() const;
-    [[nodiscard]]  virtual bool isDead() const;
+    [[nodiscard]]  virtual bool isDead();
 
 };
 
