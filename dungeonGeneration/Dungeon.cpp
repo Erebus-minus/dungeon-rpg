@@ -39,10 +39,7 @@ void Dungeon::generateFloor(int floorNumber) {
         grid[startY][startX] = ' ';
     }
 
-    //places stairs at the corner of the screen after path is created (right most bottom tile)
-    grid[stairsY][stairsX] = 'S';
-
-    //add extra space to create like a maze
+    //add extra space (calculating how many open tiles)
     int extraSpaces = width * height / 2;
 
     for (int i = 0; i < extraSpaces; i++) {
@@ -53,6 +50,9 @@ void Dungeon::generateFloor(int floorNumber) {
 
         grid[y][x] = ' ';
     }
+
+    //places stairs at the corner of the screen after path is created (right most bottom tile)
+    grid[stairsY][stairsX] = 'S';
     
     //placing chests + enenmies depending on floornumber
     int numChests = 1 + floorNumber / 2;
@@ -91,10 +91,11 @@ void Dungeon::generateFloor(int floorNumber) {
     }
 }
 
-// rendering the actual dungeon
+// rendering/printing the actual dungeon (tile by tile)
 void Dungeon::render(int playerX, int playerY) const {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
+            //checks for player tile, if so prints player
             if (x == playerX && y == playerY) {
                 cout << 'P';
             }
