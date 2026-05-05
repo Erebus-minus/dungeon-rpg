@@ -9,6 +9,7 @@ add_executable(dungeon_rpg
     UI/UI.cpp
     Player/Player.cpp
     Inventory/Item.cpp
+    Inventory/Consumable.cpp
     Inventory/Inventory.cpp
     dungeonGeneration/Dungeon.cpp
     standardEnemies/StandardEnemy.cpp
