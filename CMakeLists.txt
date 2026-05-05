@@ -9,11 +9,17 @@ add_executable(dungeon_rpg
     GameEngine/GameEngine.cpp
     UI/UI.cpp
     Player/Player.cpp
+    Inventory/Item.cpp
+    Inventory/Consumable.cpp
+    Inventory/Equipment.cpp
+    Inventory/Inventory.cpp
+    dungeonGeneration/Dungeon.cpp
     standardEnemies/StandardEnemy.cpp
     standardEnemies/Slime.cpp
     standardEnemies/Skeleton.cpp
     standardEnemies/Goblin.cpp
     standardEnemies/Troll.cpp
+    standardEnemies/Boss.cpp
     
 
 )

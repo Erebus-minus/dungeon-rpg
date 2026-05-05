@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "../Inventory/Equipment.h"
 #include "../UI/UI.h"
 #include <iostream>
 #include <algorithm>
@@ -7,10 +8,15 @@ using namespace std;
 Player::Player(const string& name)
     : Entity(name, 100, 15, 5, 10),
       xp(0), xpToNext(50), level(1), statPoints(0),
-      atkBonus(0), defBonus(0), atkBuffTurns(0),
+      atkBonus(0), defBonus(0), weapon(nullptr), armor(nullptr), atkBuffTurns(0),
       defBuffTurns(0), spdBuffTurns(0), atkBuffAmount(0),
       defBuffAmount(0), spdBuffAmount(0)
 {}
+
+Player::~Player() {
+    delete weapon;
+    delete armor;
+}
 
 string Player::getAction(){
     return "player";
@@ -112,14 +118,61 @@ void Player::tickBuffs(){
 
 void Player::equipWeapon(const string& aname, int bonus){
     equippedWeapon = aname;
-    atkBonus += bonus;
+    atkBonus = bonus;
     cout << UI::colorize("Equipped " + aname + "! Attack +" + to_string(bonus), UI::YELLOW) << "\n";
 }
 
 void Player::equipArmor(const string& bname, int bonus){
     equippedArmor = bname;
-    defBonus += bonus;
+    defBonus = bonus;
     cout << UI::colorize("Equipped " + bname + "! Defense +" + to_string(bonus), UI::YELLOW) << "\n";
+}
+
+bool Player::equip(Equipment* equipment) {
+    if (equipment == nullptr) {
+        return false;
+    }
+
+    if (equipment->getSlot() == "Weapon") {
+        delete weapon;
+        weapon = equipment;
+        equippedWeapon = equipment->getName();
+        cout << UI::colorize("Equipped " + equipment->getName() + "!", UI::YELLOW) << "\n";
+        return true;
+    }
+
+    if (equipment->getSlot() == "Armor") {
+        delete armor;
+        armor = equipment;
+        equippedArmor = equipment->getName();
+        cout << UI::colorize("Equipped " + equipment->getName() + "!", UI::YELLOW) << "\n";
+        return true;
+    }
+
+    cout << UI::colorize("Cannot equip " + equipment->getName() + ": unknown equipment slot.", UI::RED) << "\n";
+    return false;
+}
+
+int Player::getTotalAttack() const {
+    int total = stats.attack + atkBonus;
+    if (weapon != nullptr) {
+        total += weapon->getAttackBonus();
+    }
+    if (armor != nullptr) {
+        total += armor->getAttackBonus();
+    }
+    return total;
+}
+
+int Player::getTotalDefense() const {
+    int total = stats.defense + defBonus;
+    if (weapon != nullptr) {
+        total += weapon->getDefenseBonus();
+    }
+    if (armor != nullptr) {
+        total += armor->getDefenseBonus();
+    }
+    return total;
 }
 
 void Player::displayStats() const {
@@ -128,8 +181,8 @@ void Player::displayStats() const {
     cout << "  Level:  " << level << "\n";
     UI::printHPBar("  HP", stats.hp, stats.maxHP);
     UI::printXPBar(xp, xpToNext);
-    cout << "  Attack:  " << stats.attack + atkBonus << "\n";
-    cout << "  Defense:  " << stats.defense + defBonus << "\n";
+    cout << "  Attack:  " << getTotalAttack() << "\n";
+    cout << "  Defense:  " << getTotalDefense() << "\n";
     cout << "  Speed:  " << stats.speed << "\n";
     if (statPoints > 0){
         cout << UI::colorize("  Stat points available: " + to_string(statPoints) , UI::YELLOW) << "\n";
