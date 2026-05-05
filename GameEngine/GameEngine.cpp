@@ -205,10 +205,7 @@ void GameEngine::renderGameScreen() {
 
     UI::printSeparator();
 
-<<<<<<< HEAD
-    //use player.h to insert player stats (HP and where they are in regards to XP)
-=======
->>>>>>> item-system-adam
+    //use player.h to insert player stats (HP and where they are in regards to XP
     UI::printHPBar("Player", player.getHP(), player.getMaxHP());
     UI::printXPBar(player.getXP(), player.getXPToNext());
 }
