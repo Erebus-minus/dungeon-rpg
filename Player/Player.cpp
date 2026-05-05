@@ -22,6 +22,13 @@ string Player::getAction(){
     return "player";
 }
 
+int Player::takeDamage(int damage) {
+    int actualDamage = max(1, damage - getTotalDefense());
+    stats.hp = max(0, stats.hp - actualDamage);
+    if(stats.hp <= 0) alive = false;
+    return actualDamage;
+}
+
 void Player::gainXP(int amount) {
     xp += amount;
     cout << UI::colorize("+" + to_string(amount) + " XP!", UI::CYAN) << "\n";

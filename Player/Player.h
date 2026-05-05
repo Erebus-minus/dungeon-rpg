@@ -33,6 +33,7 @@ class Player : public Entity {
         ~Player();
 
         string getAction() override;
+        int takeDamage(int damage) override;
 
         void gainXP(int amount);
         void levelUp();
