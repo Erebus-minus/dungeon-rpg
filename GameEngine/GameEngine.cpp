@@ -6,7 +6,6 @@
 #include "../standardEnemies/Boss.h"
 #include "../standardEnemies/StandardEnemy.h"
 #include "../UI/UI.h"
-#include "../Player/Player.h"
 #include <iostream>
 #include <cctype>
 #include <cstdlib>
@@ -15,9 +14,7 @@
 using namespace std;
 
 namespace {
-    Player player("Hero");
-
-    void openInventory();
+    void openInventory(Player& player);
 
     Item* createChestLoot() {
         int lootRoll = rand() % 5;
@@ -38,14 +35,14 @@ namespace {
         return new Equipment("Iron Armor", "Sturdy armor made from iron plates.", 30, 0, 6, "Armor");
     }
 
-    void runBossEncounter(bool& gameRunning) {
+    void runBossEncounter(bool& gameRunning, Player& player) {
         UI::clearScreen();
         UI::printFloorHeader(5);
         cout << UI::RED << "The final floor is quiet... too quiet." << UI::RESET << "\n";
         cout << UI::RED << "The Dungeon Boss blocks your path!" << UI::RESET << "\n";
         UI::pressEnter();
 
-        Boss boss({10, 5}, "Dungeon Boss", 180, 14, {1, 2}, 'B');
+        Boss boss({10, 5}, "Dungeon Boss", 220, 10, {1, 2}, 'B');
 
         while (player.isAlive() && !boss.isDead()) {
             UI::clearScreen();
@@ -72,7 +69,7 @@ namespace {
             }
 
             if (choice == 2) {
-                openInventory();
+                openInventory(player);
                 continue;
             }
 
@@ -120,7 +117,7 @@ namespace {
         gameRunning = false;
     }
 
-    void openInventory() {
+    void openInventory(Player& player) {
         UI::clearScreen();
         cout << UI::CYAN << "Inventory\n" << UI::RESET;
         UI::printSeparator();
@@ -225,7 +222,7 @@ void GameEngine::userInput() {
     else if (lowInput == 's') movePlayer(0, 1);
     else if (lowInput == 'a') movePlayer(-1, 0);
     else if (lowInput == 'd') movePlayer(1, 0);
-    else if (lowInput == 'i') openInventory();
+    else if (lowInput == 'i') openInventory(player);
     else if (lowInput == 'q') gameRunning = false; //closes game
     else {
         cout << UI::RED << "Invalid Input\n" << UI::RESET;
@@ -304,7 +301,7 @@ void GameEngine::nextFloor() {
     currentFloor++;
 
     if (currentFloor == finalFloor) {
-        runBossEncounter(gameRunning);
+        runBossEncounter(gameRunning, player);
         return;
     }
 

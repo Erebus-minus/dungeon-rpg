@@ -3,14 +3,15 @@
 #include <iostream>
 
 Boss::Boss()
-    : StandardEnemy({0, 0}, "Boss", 180, 15, {1, 3}, 'B'), maxHP(180), phase(1)
+    : StandardEnemy({0, 0}, "Boss", 220, 10, {1, 3}, 'B'), maxHP(220), phase(1), attackCount(0)
 {}
 
 Boss::Boss(const std::pair<int, int>& pos, const std::string& name, int enemyHealth,
            int attackDamage, const std::pair<int, int>& enemySpeedMinAndMax, char symbolASCII)
     : StandardEnemy(pos, name, enemyHealth, attackDamage, enemySpeedMinAndMax, symbolASCII),
       maxHP(enemyHealth),
-      phase(1)
+      phase(1),
+      attackCount(0)
 {}
 
 void Boss::updatePhase() {
@@ -27,8 +28,14 @@ void Boss::attack(Player& player) {
 
     int damage = atkDmg;
     if (phase == 2) {
-        damage += 3;
-        std::cout << name << " uses a stronger Phase 2 attack!\n";
+        attackCount++;
+        if (attackCount % 2 == 0) {
+            damage += 4;
+            std::cout << name << " uses a heavy Phase 2 attack!\n";
+        }
+        else {
+            std::cout << name << " attacks with Phase 2 strength!\n";
+        }
     }
     else {
         std::cout << name << " attacks!\n";
