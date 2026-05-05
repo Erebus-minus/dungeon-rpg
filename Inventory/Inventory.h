@@ -3,6 +3,7 @@
 using namespace std;
 
 class Item;
+class Player;
 
 class Inventory {
     private:
@@ -16,6 +17,7 @@ class Inventory {
         Inventory& operator=(const Inventory& other) = delete;
 
         bool addItem(Item* item);
+        bool useItem(int index, Player& player);
         void removeItem(int index);
         void displayInventory() const;
         bool isEmpty() const { return items.empty();}
