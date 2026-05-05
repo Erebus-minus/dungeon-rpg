@@ -20,6 +20,7 @@ add_executable(dungeon_rpg
     standardEnemies/Goblin.cpp
     standardEnemies/Troll.cpp
     standardEnemies/Boss.cpp
+    BattleSystem/BattleSystem.cpp
     
 
 )

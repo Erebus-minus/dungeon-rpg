@@ -4,7 +4,6 @@
 #include "../Inventory/Item.h"
 #include "../Player/Player.h"
 #include "../standardEnemies/Boss.h"
-#include "../standardEnemies/StandardEnemy.h"
 #include "../UI/UI.h"
 #include <iostream>
 #include <cctype>
@@ -157,6 +156,7 @@ namespace {
     }
 }
 
+//sets up starting values
 GameEngine::GameEngine()
     : dungeon(20, 10),
       player("Hero"),
@@ -166,6 +166,7 @@ GameEngine::GameEngine()
       finalFloor(5),
       gameRunning(true)
 {
+    //creates floor 1
     dungeon.generateFloor(currentFloor);
 }
 
@@ -185,19 +186,21 @@ void GameEngine::showTitleScreen() {
     UI::printTitle();
     UI::printSeparator();
 
-cout << UI::CYAN << "A demon has been terrorizing the kingdom." << endl;
-cout << "It fled into a forgotten dungeon beneath the land." << endl;
-cout << "Descend through the dungeon and defeat it." << endl;
-cout << "Controls: Up 'W', Left 'A', Down 'S', Right 'D'; I for inventory; Q to quit" << endl << UI::RESET;
+    //prints story
+    cout << UI::CYAN << "A demon has been terrorizing the kingdom." << endl;
+    cout << "It fled into a forgotten dungeon beneath the land." << endl;
+    cout << "Descend through the dungeon and defeat it." << endl << UI::RESET;
 
     UI::printSeparator();
     UI::pressEnter();
 }
 
+//redraws screen after every turn
 void GameEngine::renderGameScreen() {
     UI::clearScreen();
     UI::printFloorHeader(currentFloor);
 
+    //prints dungeon w/ player at curr position
     dungeon.render(playerPosX, playerPosY);
 
     UI::printSeparator();
@@ -248,7 +251,7 @@ void GameEngine::movePlayer(int x, int y) {
 void GameEngine::checkTile() {
     char tile = dungeon.getTile(playerPosX, playerPosY);
 
-    //call the respective game thingy for this
+    //checks if its a chest or an ememy
     if (tile == 'C') {
         cout << UI::YELLOW << "\nYou found a chest!" << endl << UI::RESET;
 
@@ -267,30 +270,16 @@ void GameEngine::checkTile() {
         UI::pressEnter();
     }
     else if (tile == 'E') {
-        cout << UI::RED << "\nAn enemy appears!" << endl << UI::RESET;
+        //starts battle
+        BattleResult result = battleSystem.startBattle(player, playerPosX, playerPosY, currentFloor);
 
-        StandardEnemy enemy({playerPosX, playerPosY}, "Dungeon Enemy", 25, 8, {1, 3}, 'E');
-
-        int playerDamage = player.getTotalAttack();
-        enemy.changeHP(playerDamage);
-        cout << "You hit the " << enemy.getName() << " for " << playerDamage << " damage." << endl;
-
-        if (enemy.isDead()) {
-            cout << UI::GREEN << "The enemy was defeated!" << endl << UI::RESET;
-            player.gainXP(10);
+        if (result == PlayerWon) {
+            dungeon.setTile(playerPosX, playerPosY, ' '); //clears the enemy if player wins
+            UI::pressEnter();
         }
-        else {
-            int damageTaken = player.takeDamage(enemy.getAtkDmg());
-            cout << "The enemy hits you for " << damageTaken << " damage." << endl;
-
-            if (!player.isAlive()) {
-                UI::printGameOver();
-                gameRunning = false;
-            }
+        else if (result == PlayerDied) {
+            gameRunning = false; //game ends if player loses
         }
-
-        dungeon.setTile(playerPosX, playerPosY, ' '); //clears the enemy after this simple encounter
-        UI::pressEnter();
     }
     else if (tile == 'S') {
         nextFloor();
@@ -300,6 +289,7 @@ void GameEngine::checkTile() {
 void GameEngine::nextFloor() {
     currentFloor++;
 
+    //if final floor, it becomes the boss floor
     if (currentFloor == finalFloor) {
         runBossEncounter(gameRunning, player);
         return;
@@ -310,7 +300,9 @@ void GameEngine::nextFloor() {
         return;
     }
 
+    //generate new floor for next floor (after going up stairs)
     dungeon.generateFloor(currentFloor);
+    //player resets to (1,1)
     playerPosX = 1;
     playerPosY = 1;
 

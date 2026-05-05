@@ -3,11 +3,13 @@
 
 #include "../dungeonGeneration/Dungeon.h"
 #include "../Player/Player.h"
+#include "../BattleSystem/BattleSystem.h"
 
 class GameEngine{
     private:
         Dungeon dungeon;
         Player player;
+        BattleSystem battleSystem;
         int playerPosX;
         int playerPosY;
         int currentFloor;
