@@ -2,10 +2,12 @@
 #define GAMEENGINE_H
 
 #include "../dungeonGeneration/Dungeon.h"
+#include "../Player/Player.h"
 
 class GameEngine{
     private:
         Dungeon dungeon;
+        Player player;
         int playerPosX;
         int playerPosY;
         int currentFloor;

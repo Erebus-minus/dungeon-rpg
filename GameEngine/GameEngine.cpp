@@ -1,5 +1,6 @@
 #include "GameEngine.h"
 #include "../UI/UI.h"
+#include "../Player/Player.h"
 #include <iostream>
 #include <cctype>
 
@@ -7,6 +8,7 @@ using namespace std;
 
 GameEngine::GameEngine()
     : dungeon(20, 10),
+      player("Hero"),
       playerPosX(1),
       playerPosY(1),
       currentFloor(1),
@@ -26,13 +28,15 @@ void GameEngine::runGame() {
     }
 }
 
+//Show into title screen
 void GameEngine::showTitleScreen() {
     UI::clearScreen();
     UI::printTitle();
     UI::printSeparator();
 
-    cout << UI::CYAN << "You are a hero traversing an unknown dungeon, what awaits you at the bottom?" << endl;
-    cout << "Controls: Up 'W', Left 'A', Down 'S', Right 'D'; Q to quit" << endl << UI::RESET;
+    cout << UI::CYAN << "A demon has been terrorizing the kingdom." << endl;
+    cout << "It fled into a forgotten dungeon beneath the land." << endl;
+    cout << "Descend through the dungeon and defeat it." << endl << UI::RESET;
 
     UI::printSeparator();
     UI::pressEnter();
@@ -44,11 +48,11 @@ void GameEngine::renderGameScreen() {
 
     dungeon.render(playerPosX, playerPosY);
 
-    UI:: printSeparator();
+    UI::printSeparator();
 
-    //placeholder stats
-    UI::printHPBar("Player", 100, 100);
-    UI::printXPBar(0, 100);
+    //use player.h to insert player stats (HP and where they are in regards to XP)
+    UI::printHPBar("Player", player.getHP(), player.getMaxHP());
+    UI::printXPBar(player.getXP(), player.getXPToNext());
 }
 
 //handles player movement from user input
@@ -68,7 +72,7 @@ void GameEngine::userInput() {
     else if (lowInput == 'd') movePlayer(1, 0);
     else if (lowInput == 'q') gameRunning = false; //closes game
     else {
-        cout << UI::RED << "Invalid Input\n";
+        cout << UI::RED << "Invalid Input\n" << UI::RESET;
         UI::pressEnter();
     }
 }
