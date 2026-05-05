@@ -3,6 +3,8 @@
 #include "../Inventory/Inventory.h"
 using namespace std;
 
+class Equipment;
+
 class Player : public Entity {
     private:
         int xp;
@@ -14,6 +16,8 @@ class Player : public Entity {
         int defBonus;
         string equippedWeapon;
         string equippedArmor;
+        Equipment* weapon;
+        Equipment* armor;
 
         int atkBuffTurns;
         int defBuffTurns;
@@ -26,6 +30,7 @@ class Player : public Entity {
     
     public:
         Player(const string& name);
+        ~Player();
 
         string getAction() override;
 
@@ -40,6 +45,7 @@ class Player : public Entity {
 
         void equipWeapon(const string& name, int bonus);
         void equipArmor(const string& name, int bonus);
+        bool equip(Equipment* equipment);
 
         Inventory& getInventory() { return inventory; }
         
@@ -47,8 +53,10 @@ class Player : public Entity {
         int getXP() const { return xp; }
         int getXPToNext() const { return xpToNext; }
         int getStatPoints() const { return statPoints; }
-        int getEffectiveAttack() const { return stats.attack + atkBonus; }
-        int getEffectiveDefense() const { return stats.defense + defBonus; }
+        int getTotalAttack() const;
+        int getTotalDefense() const;
+        int getEffectiveAttack() const { return getTotalAttack(); }
+        int getEffectiveDefense() const { return getTotalDefense(); }
 
         void displayStats() const;
 };

@@ -56,7 +56,11 @@ bool Inventory::useItem(int index, Player& player) {
 
     Equipment* equipment = dynamic_cast<Equipment*>(item);
     if (equipment != nullptr) {
-        cout << equipment->getName() << " cannot be used yet. Equip logic will be added later.\n";
+        if (player.equip(equipment)) {
+            items.erase(items.begin() + index);
+            return true;
+        }
+
         return false;
     }
 
