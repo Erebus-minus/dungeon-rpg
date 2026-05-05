@@ -8,6 +8,9 @@ add_executable(dungeon_rpg
     Entity/Entity.cpp
     UI/UI.cpp
     Player/Player.cpp
+    Inventory/Item.cpp
+    Inventory/Inventory.cpp
+    dungeonGeneration/Dungeon.cpp
     standardEnemies/StandardEnemy.cpp
     standardEnemies/Slime.cpp
     standardEnemies/Skeleton.cpp
