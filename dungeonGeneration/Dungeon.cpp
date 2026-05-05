@@ -3,7 +3,7 @@
 #include <stdlib.h>
 using namespace std;
 
-//constructer for dungeon generation (i think)
+//sets dungeon size + fills in walls
 Dungeon::Dungeon(int w, int h) : width(w), height(h) {
     grid.resize(height, vector<char>(width, '#'));
 }
@@ -39,11 +39,8 @@ void Dungeon::generateFloor(int floorNumber) {
         grid[startY][startX] = ' ';
     }
 
-    //places stairs at the corner of the screen after path is created (right most bottom tile)
-    grid[stairsY][stairsX] = 'S';
-
-    //add extra space to create like a maze
-    int extraSpaces = width * height / 2;
+    //randomly generate spaces in dungeon
+    int extraSpaces = width * height / 2; //calc num of free space
 
     for (int i = 0; i < extraSpaces; i++) {
         //avoids left(0) wall and right (19) walls
@@ -53,9 +50,17 @@ void Dungeon::generateFloor(int floorNumber) {
 
         grid[y][x] = ' ';
     }
+
+    //places stairs at the corner of the screen after path is created (right most bottom tile)
+    grid[stairsY][stairsX] = 'S';
     
-    //placing chests + enenmies depending on floornumber
-    int numChests = 1 + floorNumber / 2;
+    //places 1 chest on floors 1, 3, and 5
+    int numChests = 0;
+    if (floorNumber == 1 || floorNumber == 3 || floorNumber == 5) {
+        numChests = 1;
+    }
+
+    //two enemies + increases as floor increases
     int numEnemies = 2 + floorNumber;
     
     //loop for finding rand blank spaces for chests
@@ -91,10 +96,11 @@ void Dungeon::generateFloor(int floorNumber) {
     }
 }
 
-// rendering the actual dungeon
+// rendering/printing the actual dungeon (tile by tile)
 void Dungeon::render(int playerX, int playerY) const {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
+            //print player at curr pos
             if (x == playerX && y == playerY) {
                 cout << 'P';
             }
@@ -107,7 +113,7 @@ void Dungeon::render(int playerX, int playerY) const {
     }
 }
 
-//checking if walkable (basically if theres any walls or floors around)
+//checking if walkable (basically if pos is in a wall)
 bool Dungeon::checkWalkable(int x, int y) const {
     if (x < 0 || y < 0 || x >= width || y >= height) {
         return false;
@@ -130,7 +136,7 @@ int Dungeon::getWidth() const {
     return width;
 }
 
-//get width
+//get height
 int Dungeon::getHeight() const {
     return height;
 }
