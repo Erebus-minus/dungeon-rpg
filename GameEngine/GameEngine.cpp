@@ -1,17 +1,41 @@
 #include "GameEngine.h"
 #include "../Inventory/Consumable.h"
+#include "../Inventory/Equipment.h"
+#include "../Inventory/Item.h"
 #include "../Player/Player.h"
 #include "../standardEnemies/Boss.h"
 #include "../standardEnemies/StandardEnemy.h"
 #include "../UI/UI.h"
 #include <iostream>
 #include <cctype>
+#include <cstdlib>
 #include <limits>
 
 using namespace std;
 
 namespace {
     Player player("Hero");
+
+    void openInventory();
+
+    Item* createChestLoot() {
+        int lootRoll = rand() % 5;
+
+        if (lootRoll == 0) {
+            return new Consumable("Health Potion", "Restores a small amount of HP.", 10, 20);
+        }
+        else if (lootRoll == 1) {
+            return new Equipment("Rusty Sword", "An old sword with a dull edge.", 5, 3, 0, "Weapon");
+        }
+        else if (lootRoll == 2) {
+            return new Equipment("Iron Sword", "A reliable iron sword.", 20, 6, 0, "Weapon");
+        }
+        else if (lootRoll == 3) {
+            return new Equipment("Leather Armor", "Light armor made from tough leather.", 15, 0, 3, "Armor");
+        }
+
+        return new Equipment("Iron Armor", "Sturdy armor made from iron plates.", 30, 0, 6, "Armor");
+    }
 
     void runBossEncounter(bool& gameRunning) {
         UI::clearScreen();
@@ -29,6 +53,40 @@ namespace {
             cout << boss.getName() << " HP: " << boss.getHP() << " | Phase: " << boss.getPhase() << "\n";
             UI::printHPBar("Player", player.getHP(), player.getMaxHP());
             UI::printSeparator();
+
+            cout << "[1] Attack\n";
+            cout << "[2] Open inventory\n";
+            cout << "[3] Run/Quit\n";
+            cout << "Choice: ";
+
+            int choice;
+            cin >> choice;
+
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << UI::RED << "Invalid choice." << UI::RESET << "\n";
+                UI::pressEnter();
+                continue;
+            }
+
+            if (choice == 2) {
+                openInventory();
+                continue;
+            }
+
+            if (choice == 3) {
+                cout << UI::RED << "You flee from the final battle." << UI::RESET << "\n";
+                UI::pressEnter();
+                gameRunning = false;
+                return;
+            }
+
+            if (choice != 1) {
+                cout << UI::RED << "Invalid choice." << UI::RESET << "\n";
+                UI::pressEnter();
+                continue;
+            }
 
             int playerDamage = player.getTotalAttack();
             boss.changeHP(playerDamage);
@@ -191,13 +249,15 @@ void GameEngine::checkTile() {
     if (tile == 'C') {
         cout << UI::YELLOW << "\nYou found a chest!" << endl << UI::RESET;
 
-        Consumable* potion = new Consumable("Health Potion", "Restores a small amount of HP.", 10, 20);
-        if (player.getInventory().addItem(potion)) {
-            cout << UI::GREEN << "You found a Health Potion and added it to your inventory!" << endl << UI::RESET;
+        Item* loot = createChestLoot();
+        if (player.getInventory().addItem(loot)) {
+            cout << UI::GREEN << "You found " << loot->getName()
+                 << " and added it to your inventory!" << endl << UI::RESET;
         }
         else {
-            delete potion;
-            cout << UI::RED << "Your inventory is full, so you leave the potion behind." << endl << UI::RESET;
+            cout << UI::RED << "Your inventory is full, so you leave "
+                 << loot->getName() << " behind." << endl << UI::RESET;
+            delete loot;
         }
 
         dungeon.setTile(playerPosX, playerPosY, ' '); //gets rid of the chest after player gets there
