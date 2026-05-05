@@ -3,7 +3,7 @@
 #include <iostream>
 
 Boss::Boss()
-    : StandardEnemy({0, 0}, "Boss", 100, 15, {1, 3}, 'B'), maxHP(100), phase(1)
+    : StandardEnemy({0, 0}, "Boss", 180, 15, {1, 3}, 'B'), maxHP(180), phase(1)
 {}
 
 Boss::Boss(const std::pair<int, int>& pos, const std::string& name, int enemyHealth,
@@ -16,8 +16,9 @@ Boss::Boss(const std::pair<int, int>& pos, const std::string& name, int enemyHea
 void Boss::updatePhase() {
     if (phase == 1 && hp <= maxHP / 2) {
         phase = 2;
-        atkDmg += 5;
-        std::cout << name << " enters Phase 2! Its attacks become stronger.\n";
+        atkDmg += 4;
+        std::cout << "\n*** The boss enters Phase 2! ***\n";
+        std::cout << name << " becomes enraged and hits harder.\n";
     }
 }
 
@@ -27,7 +28,7 @@ void Boss::attack(Player& player) {
     int damage = atkDmg;
     if (phase == 2) {
         damage += 3;
-        std::cout << name << " uses a special Phase 2 attack!\n";
+        std::cout << name << " uses a stronger Phase 2 attack!\n";
     }
     else {
         std::cout << name << " attacks!\n";

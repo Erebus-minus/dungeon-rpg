@@ -44,7 +44,7 @@ namespace {
         cout << UI::RED << "The Dungeon Boss blocks your path!" << UI::RESET << "\n";
         UI::pressEnter();
 
-        Boss boss({10, 5}, "Dungeon Boss", 100, 12, {1, 2}, 'B');
+        Boss boss({10, 5}, "Dungeon Boss", 180, 14, {1, 2}, 'B');
 
         while (player.isAlive() && !boss.isDead()) {
             UI::clearScreen();

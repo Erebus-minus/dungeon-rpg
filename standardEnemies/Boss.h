@@ -7,7 +7,7 @@ class Player;
 
 class Boss : public StandardEnemy {
 private:
-    int maxHP = 100;
+    int maxHP = 180;
     int phase = 1;
 
 public:
