@@ -32,6 +32,7 @@ namespace UI {
              << "[Press ENTER to continue...]" << RESET;
 
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.get();
     }
 
     void printHPBar(const string& name, int hp, int maxHP){

@@ -1,9 +1,16 @@
 #include "GameEngine.h"
+#include "../Inventory/Consumable.h"
+#include "../Player/Player.h"
+#include "../standardEnemies/StandardEnemy.h"
 #include "../UI/UI.h"
 #include <iostream>
 #include <cctype>
 
 using namespace std;
+
+namespace {
+    Player player("Hero");
+}
 
 GameEngine::GameEngine()
     : dungeon(20, 10),
@@ -46,9 +53,8 @@ void GameEngine::renderGameScreen() {
 
     UI:: printSeparator();
 
-    //placeholder stats
-    UI::printHPBar("Player", 100, 100);
-    UI::printXPBar(0, 100);
+    UI::printHPBar("Player", player.getHP(), player.getMaxHP());
+    UI::printXPBar(player.getXP(), player.getXPToNext());
 }
 
 //handles player movement from user input
@@ -94,12 +100,43 @@ void GameEngine::checkTile() {
     //call the respective game thingy for this
     if (tile == 'C') {
         cout << UI::YELLOW << "\nYou found a chest!" << endl << UI::RESET;
-        dungeon.setTile(playerPosX, playerPosY, ' '); //gets rid of the item after player gets there
+
+        Consumable* potion = new Consumable("Health Potion", "Restores a small amount of HP.", 10, 20);
+        if (player.getInventory().addItem(potion)) {
+            cout << UI::GREEN << "You found a Health Potion and added it to your inventory!" << endl << UI::RESET;
+        }
+        else {
+            delete potion;
+            cout << UI::RED << "Your inventory is full, so you leave the potion behind." << endl << UI::RESET;
+        }
+
+        dungeon.setTile(playerPosX, playerPosY, ' '); //gets rid of the chest after player gets there
         UI::pressEnter();
     }
     else if (tile == 'E') {
         cout << UI::RED << "\nAn enemy appears!" << endl << UI::RESET;
-        dungeon.setTile(playerPosX, playerPosY, ' '); //gets rid of the item after player gets there
+
+        StandardEnemy enemy({playerPosX, playerPosY}, "Dungeon Enemy", 25, 8, {1, 3}, 'E');
+
+        int playerDamage = player.getTotalAttack();
+        enemy.changeHP(playerDamage);
+        cout << "You hit the " << enemy.getName() << " for " << playerDamage << " damage." << endl;
+
+        if (enemy.isDead()) {
+            cout << UI::GREEN << "The enemy was defeated!" << endl << UI::RESET;
+            player.gainXP(10);
+        }
+        else {
+            int damageTaken = player.takeDamage(enemy.getAtkDmg());
+            cout << "The enemy hits you for " << damageTaken << " damage." << endl;
+
+            if (!player.isAlive()) {
+                UI::printGameOver();
+                gameRunning = false;
+            }
+        }
+
+        dungeon.setTile(playerPosX, playerPosY, ' '); //clears the enemy after this simple encounter
         UI::pressEnter();
     }
     else if (tile == 'S') {

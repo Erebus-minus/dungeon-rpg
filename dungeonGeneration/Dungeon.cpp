@@ -118,7 +118,9 @@ bool Dungeon::checkWalkable(int x, int y) const {
     if (x < 0 || y < 0 || x >= width || y >= height) {
         return false;
     }
-    return grid[y][x] != '#';
+
+    char tile = grid[y][x];
+    return tile == ' ' || tile == 'C' || tile == 'E' || tile == 'S';
 }
 
 //get tile
