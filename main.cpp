@@ -3,6 +3,7 @@
 #include "Inventory/Equipment.h"
 #include "Inventory/Inventory.h"
 #include "Player/Player.h"
+#include "standardEnemies/Boss.h"
 #include <ctime>
 #include <iostream>
 
@@ -34,6 +35,19 @@ int main(){
 
     // pretend player is at (1,1)
     dungeon.render(1, 1);
+
+    // Temporary boss encounter demo. Remove this block when boss rooms are added to gameplay.
+    Boss demoBoss({18, 8}, "Dungeon Boss", 100, 12, {1, 2}, 'B');
+
+    cout << "\nBoss encounter demo:\n";
+    cout << demoBoss.getName() << " starts in phase " << demoBoss.getPhase() << ".\n";
+    demoBoss.attack(demoPlayer);
+
+    cout << "\nThe player strikes the boss for 55 damage.\n";
+    demoBoss.changeHP(55);
+    demoBoss.updatePhase();
+    cout << demoBoss.getName() << " is now in phase " << demoBoss.getPhase() << ".\n";
+    demoBoss.attack(demoPlayer);
 
     return 0;
 }
