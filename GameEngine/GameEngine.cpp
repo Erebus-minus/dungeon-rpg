@@ -1,15 +1,104 @@
 #include "GameEngine.h"
 #include "../Inventory/Consumable.h"
 #include "../Player/Player.h"
+#include "../standardEnemies/Boss.h"
 #include "../standardEnemies/StandardEnemy.h"
 #include "../UI/UI.h"
 #include <iostream>
 #include <cctype>
+#include <limits>
 
 using namespace std;
 
 namespace {
     Player player("Hero");
+
+    void runBossEncounter(bool& gameRunning) {
+        UI::clearScreen();
+        UI::printFloorHeader(5);
+        cout << UI::RED << "The final floor is quiet... too quiet." << UI::RESET << "\n";
+        cout << UI::RED << "The Dungeon Boss blocks your path!" << UI::RESET << "\n";
+        UI::pressEnter();
+
+        Boss boss({10, 5}, "Dungeon Boss", 100, 12, {1, 2}, 'B');
+
+        while (player.isAlive() && !boss.isDead()) {
+            UI::clearScreen();
+            cout << UI::BOLD << "Boss Fight\n" << UI::RESET;
+            UI::printSeparator();
+            cout << boss.getName() << " HP: " << boss.getHP() << " | Phase: " << boss.getPhase() << "\n";
+            UI::printHPBar("Player", player.getHP(), player.getMaxHP());
+            UI::printSeparator();
+
+            int playerDamage = player.getTotalAttack();
+            boss.changeHP(playerDamage);
+            cout << "You hit the " << boss.getName() << " for " << playerDamage << " damage.\n";
+            boss.updatePhase();
+
+            if (boss.isDead()) {
+                break;
+            }
+
+            boss.attack(player);
+
+            if (!player.isAlive()) {
+                break;
+            }
+
+            UI::pressEnter();
+        }
+
+        if (boss.isDead()) {
+            UI::clearScreen();
+            cout << UI::GREEN << "The Dungeon Boss has been defeated!" << UI::RESET << "\n";
+            UI::printVictory();
+        }
+        else {
+            UI::clearScreen();
+            UI::printGameOver();
+        }
+
+        gameRunning = false;
+    }
+
+    void openInventory() {
+        UI::clearScreen();
+        cout << UI::CYAN << "Inventory\n" << UI::RESET;
+        UI::printSeparator();
+
+        player.getInventory().displayInventory();
+
+        if (player.getInventory().isEmpty()) {
+            UI::pressEnter();
+            return;
+        }
+
+        cout << "\nEnter item number to use, or 0 to go back: ";
+
+        int choice;
+        cin >> choice;
+
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << UI::RED << "Invalid choice." << UI::RESET << "\n";
+            UI::pressEnter();
+            return;
+        }
+
+        if (choice == 0) {
+            return;
+        }
+
+        if (choice < 1 || choice > player.getInventory().getSize()) {
+            cout << UI::RED << "Invalid item number." << UI::RESET << "\n";
+            UI::pressEnter();
+            return;
+        }
+
+        player.getInventory().useItem(choice - 1, player);
+        UI::pressEnter();
+    }
 }
 
 GameEngine::GameEngine()
@@ -39,7 +128,7 @@ void GameEngine::showTitleScreen() {
     UI::printSeparator();
 
     cout << UI::CYAN << "You are a hero traversing an unknown dungeon, what awaits you at the bottom?" << endl;
-    cout << "Controls: Up 'W', Left 'A', Down 'S', Right 'D'; Q to quit" << endl << UI::RESET;
+    cout << "Controls: Up 'W', Left 'A', Down 'S', Right 'D'; I for inventory; Q to quit" << endl << UI::RESET;
 
     UI::printSeparator();
     UI::pressEnter();
@@ -59,7 +148,7 @@ void GameEngine::renderGameScreen() {
 
 //handles player movement from user input
 void GameEngine::userInput() {
-    cout << "Move (W A S D), Q to quit: ";
+    cout << "Move (W A S D), I for inventory, Q to quit: ";
 
     char input;
     cin >> input;
@@ -72,6 +161,7 @@ void GameEngine::userInput() {
     else if (lowInput == 's') movePlayer(0, 1);
     else if (lowInput == 'a') movePlayer(-1, 0);
     else if (lowInput == 'd') movePlayer(1, 0);
+    else if (lowInput == 'i') openInventory();
     else if (lowInput == 'q') gameRunning = false; //closes game
     else {
         cout << UI::RED << "Invalid Input\n";
@@ -147,9 +237,12 @@ void GameEngine::checkTile() {
 void GameEngine::nextFloor() {
     currentFloor++;
 
+    if (currentFloor == finalFloor) {
+        runBossEncounter(gameRunning);
+        return;
+    }
+
     if (currentFloor > finalFloor) {
-        UI::clearScreen();
-        UI::printVictory();
         gameRunning = false;
         return;
     }
