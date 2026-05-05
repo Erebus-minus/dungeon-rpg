@@ -18,6 +18,7 @@ add_executable(dungeon_rpg
     standardEnemies/Skeleton.cpp
     standardEnemies/Goblin.cpp
     standardEnemies/Troll.cpp
+    standardEnemies/Boss.cpp
     
 
 )
