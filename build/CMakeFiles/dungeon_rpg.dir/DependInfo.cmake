@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/Inventory/Consumable.cpp" "CMakeFiles/dungeon_rpg.dir/Inventory/Consumable.cpp.o" "gcc" "CMakeFiles/dungeon_rpg.dir/Inventory/Consumable.cpp.o.d"
   "/Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/Inventory/Equipment.cpp" "CMakeFiles/dungeon_rpg.dir/Inventory/Equipment.cpp.o" "gcc" "CMakeFiles/dungeon_rpg.dir/Inventory/Equipment.cpp.o.d"
   "/Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/Inventory/Inventory.cpp" "CMakeFiles/dungeon_rpg.dir/Inventory/Inventory.cpp.o" "gcc" "CMakeFiles/dungeon_rpg.dir/Inventory/Inventory.cpp.o.d"
+  "/Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/Inventory/InventoryMenu.cpp" "CMakeFiles/dungeon_rpg.dir/Inventory/InventoryMenu.cpp.o" "gcc" "CMakeFiles/dungeon_rpg.dir/Inventory/InventoryMenu.cpp.o.d"
   "/Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/Inventory/Item.cpp" "CMakeFiles/dungeon_rpg.dir/Inventory/Item.cpp.o" "gcc" "CMakeFiles/dungeon_rpg.dir/Inventory/Item.cpp.o.d"
   "/Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/Player/Player.cpp" "CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.o" "gcc" "CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.o.d"
   "/Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/UI/UI.cpp" "CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.o" "gcc" "CMakeFiles/dungeon_rpg.dir/UI/UI.cpp.o.d"

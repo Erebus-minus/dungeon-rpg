@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/dungeon_rpg.dir/Inventory/Equipment.cpp.o.d"
   "CMakeFiles/dungeon_rpg.dir/Inventory/Inventory.cpp.o"
   "CMakeFiles/dungeon_rpg.dir/Inventory/Inventory.cpp.o.d"
+  "CMakeFiles/dungeon_rpg.dir/Inventory/InventoryMenu.cpp.o"
+  "CMakeFiles/dungeon_rpg.dir/Inventory/InventoryMenu.cpp.o.d"
   "CMakeFiles/dungeon_rpg.dir/Inventory/Item.cpp.o"
   "CMakeFiles/dungeon_rpg.dir/Inventory/Item.cpp.o.d"
   "CMakeFiles/dungeon_rpg.dir/Player/Player.cpp.o"

@@ -273,6 +273,30 @@ Inventory/Inventory.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dungeon_rpg.dir/build.make CMakeFiles/dungeon_rpg.dir/Inventory/Inventory.cpp.s
 .PHONY : Inventory/Inventory.cpp.s
 
+Inventory/InventoryMenu.o: Inventory/InventoryMenu.cpp.o
+.PHONY : Inventory/InventoryMenu.o
+
+# target to build an object file
+Inventory/InventoryMenu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dungeon_rpg.dir/build.make CMakeFiles/dungeon_rpg.dir/Inventory/InventoryMenu.cpp.o
+.PHONY : Inventory/InventoryMenu.cpp.o
+
+Inventory/InventoryMenu.i: Inventory/InventoryMenu.cpp.i
+.PHONY : Inventory/InventoryMenu.i
+
+# target to preprocess a source file
+Inventory/InventoryMenu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dungeon_rpg.dir/build.make CMakeFiles/dungeon_rpg.dir/Inventory/InventoryMenu.cpp.i
+.PHONY : Inventory/InventoryMenu.cpp.i
+
+Inventory/InventoryMenu.s: Inventory/InventoryMenu.cpp.s
+.PHONY : Inventory/InventoryMenu.s
+
+# target to generate assembly for a file
+Inventory/InventoryMenu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/dungeon_rpg.dir/build.make CMakeFiles/dungeon_rpg.dir/Inventory/InventoryMenu.cpp.s
+.PHONY : Inventory/InventoryMenu.cpp.s
+
 Inventory/Item.o: Inventory/Item.cpp.o
 .PHONY : Inventory/Item.o
 
@@ -564,6 +588,9 @@ help:
 	@echo "... Inventory/Inventory.o"
 	@echo "... Inventory/Inventory.i"
 	@echo "... Inventory/Inventory.s"
+	@echo "... Inventory/InventoryMenu.o"
+	@echo "... Inventory/InventoryMenu.i"
+	@echo "... Inventory/InventoryMenu.s"
 	@echo "... Inventory/Item.o"
 	@echo "... Inventory/Item.i"
 	@echo "... Inventory/Item.s"

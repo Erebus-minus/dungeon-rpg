@@ -856,11 +856,12 @@ CMakeFiles/dungeon_rpg.dir/GameEngine/GameEngine.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/student_t_distribution.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_random_bit_generator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/weibull_distribution.h \
+  /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../BattleSystem/../standardEnemies/Boss.h \
   /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../Inventory/Consumable.h \
   /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../Inventory/Item.h \
   /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../Inventory/Equipment.h \
-  /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../standardEnemies/Boss.h \
-  /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../standardEnemies/StandardEnemy.h \
+  /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../Inventory/InventoryMenu.h \
+  /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../Inventory/../Player/Player.h \
   /Users/nirwishasingh/Desktop/Projects/CS2560/dungeon-rpg/GameEngine/../UI/UI.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/istream \
