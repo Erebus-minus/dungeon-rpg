@@ -95,10 +95,10 @@ BattleResult BattleSystem::startBossBattle(Player& player) {
     UI::clearScreen();
     UI::printFloorHeader(5);
     cout << UI::RED << "The final floor is quiet... too quiet." << UI::RESET << "\n";
-    cout << UI::RED << "The Dungeon Boss blocks your path!" << UI::RESET << "\n";
+    cout << UI::RED << "The Demon Lord blocks your path!" << UI::RESET << "\n";
     UI::pressEnter();
     
-    Boss boss({10, 5}, "Dungeon Boss", 220, 10, {1, 2}, 'B');
+    Boss boss({10, 5}, "Demon Lord", 220, 10, {1, 2}, 'B');
     
     while (player.isAlive() && !boss.isDead()) {
         UI::clearScreen();
