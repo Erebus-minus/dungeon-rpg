@@ -2,8 +2,8 @@
 #include "../Inventory/Consumable.h"
 #include "../Inventory/Equipment.h"
 #include "../Inventory/Item.h"
+#include "../Inventory/InventoryMenu.h"
 #include "../Player/Player.h"
-#include "../standardEnemies/Boss.h"
 #include "../UI/UI.h"
 #include <iostream>
 #include <cctype>
@@ -32,127 +32,6 @@ namespace {
         }
 
         return new Equipment("Iron Armor", "Sturdy armor made from iron plates.", 30, 0, 6, "Armor");
-    }
-
-    void runBossEncounter(bool& gameRunning, Player& player) {
-        UI::clearScreen();
-        UI::printFloorHeader(5);
-        cout << UI::RED << "The final floor is quiet... too quiet." << UI::RESET << "\n";
-        cout << UI::RED << "The Dungeon Boss blocks your path!" << UI::RESET << "\n";
-        UI::pressEnter();
-
-        Boss boss({10, 5}, "Dungeon Boss", 220, 10, {1, 2}, 'B');
-
-        while (player.isAlive() && !boss.isDead()) {
-            UI::clearScreen();
-            cout << UI::BOLD << "Boss Fight\n" << UI::RESET;
-            UI::printSeparator();
-            cout << boss.getName() << " HP: " << boss.getHP() << " | Phase: " << boss.getPhase() << "\n";
-            UI::printHPBar("Player", player.getHP(), player.getMaxHP());
-            UI::printSeparator();
-
-            cout << "[1] Attack\n";
-            cout << "[2] Open inventory\n";
-            cout << "[3] Run/Quit\n";
-            cout << "Choice: ";
-
-            int choice;
-            cin >> choice;
-
-            if (cin.fail()) {
-                cin.clear();
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                cout << UI::RED << "Invalid choice." << UI::RESET << "\n";
-                UI::pressEnter();
-                continue;
-            }
-
-            if (choice == 2) {
-                openInventory(player);
-                continue;
-            }
-
-            if (choice == 3) {
-                cout << UI::RED << "You flee from the final battle." << UI::RESET << "\n";
-                UI::pressEnter();
-                gameRunning = false;
-                return;
-            }
-
-            if (choice != 1) {
-                cout << UI::RED << "Invalid choice." << UI::RESET << "\n";
-                UI::pressEnter();
-                continue;
-            }
-
-            int playerDamage = player.getTotalAttack();
-            boss.changeHP(playerDamage);
-            cout << "You hit the " << boss.getName() << " for " << playerDamage << " damage.\n";
-            boss.updatePhase();
-
-            if (boss.isDead()) {
-                break;
-            }
-
-            boss.attack(player);
-
-            if (!player.isAlive()) {
-                break;
-            }
-
-            UI::pressEnter();
-        }
-
-        if (boss.isDead()) {
-            UI::clearScreen();
-            cout << UI::GREEN << "The Dungeon Boss has been defeated!" << UI::RESET << "\n";
-            UI::printVictory();
-        }
-        else {
-            UI::clearScreen();
-            UI::printGameOver();
-        }
-
-        gameRunning = false;
-    }
-
-    void openInventory(Player& player) {
-        UI::clearScreen();
-        cout << UI::CYAN << "Inventory\n" << UI::RESET;
-        UI::printSeparator();
-
-        player.getInventory().displayInventory();
-
-        if (player.getInventory().isEmpty()) {
-            UI::pressEnter();
-            return;
-        }
-
-        cout << "\nEnter item number to use, or 0 to go back: ";
-
-        int choice;
-        cin >> choice;
-
-        if (cin.fail()) {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << UI::RED << "Invalid choice." << UI::RESET << "\n";
-            UI::pressEnter();
-            return;
-        }
-
-        if (choice == 0) {
-            return;
-        }
-
-        if (choice < 1 || choice > player.getInventory().getSize()) {
-            cout << UI::RED << "Invalid item number." << UI::RESET << "\n";
-            UI::pressEnter();
-            return;
-        }
-
-        player.getInventory().useItem(choice - 1, player);
-        UI::pressEnter();
     }
 }
 
@@ -225,7 +104,7 @@ void GameEngine::userInput() {
     else if (lowInput == 's') movePlayer(0, 1);
     else if (lowInput == 'a') movePlayer(-1, 0);
     else if (lowInput == 'd') movePlayer(1, 0);
-    else if (lowInput == 'i') openInventory(player);
+    else if (lowInput == 'i') InventoryMenu::open(player); //calls menu
     else if (lowInput == 'q') gameRunning = false; //closes game
     else {
         cout << UI::RED << "Invalid Input\n" << UI::RESET;
@@ -278,6 +157,7 @@ void GameEngine::checkTile() {
             UI::pressEnter();
         }
         else if (result == PlayerDied) {
+            UI::printGameOver();
             gameRunning = false; //game ends if player loses
         }
     }
@@ -291,11 +171,23 @@ void GameEngine::nextFloor() {
 
     //if final floor, it becomes the boss floor
     if (currentFloor == finalFloor) {
-        runBossEncounter(gameRunning, player);
-        return;
-    }
+    
+        BattleResult result = battleSystem.startBossBattle(player);
+        
+        if (result == PlayerWon) {
+            UI::clearScreen();
+            cout << UI::GREEN << "The Dungeon Boss has been defeated!" << UI::RESET << "\n";
+            UI::printVictory();
+        }
+        else if (result == PlayerFlee) {
+            cout << UI::RED << "You flee from the final battle." << UI::RESET << "\n";
+            UI::pressEnter();
+        }
+        else {
+            UI::clearScreen();
+            UI::printGameOver();
+        }
 
-    if (currentFloor > finalFloor) {
         gameRunning = false;
         return;
     }

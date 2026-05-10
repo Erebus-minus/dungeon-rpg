@@ -13,6 +13,7 @@ add_executable(dungeon_rpg
     Inventory/Consumable.cpp
     Inventory/Equipment.cpp
     Inventory/Inventory.cpp
+    Inventory/InventoryMenu.cpp
     dungeonGeneration/Dungeon.cpp
     standardEnemies/StandardEnemy.cpp
     standardEnemies/Slime.cpp
@@ -21,6 +22,5 @@ add_executable(dungeon_rpg
     standardEnemies/Troll.cpp
     standardEnemies/Boss.cpp
     BattleSystem/BattleSystem.cpp
-    
 
 )

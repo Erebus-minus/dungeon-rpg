@@ -1,4 +1,5 @@
 #include "BattleSystem.h"
+#include "../Inventory/InventoryMenu.h"
 #include "../UI/UI.h"
 
 #include <iostream>
@@ -86,6 +87,75 @@ unique_ptr<StandardEnemy> BattleSystem::createRandomEnemy(int x, int y, int floo
             pair<int, int>{3, 8},
             'E'
         );
+    }
+
+}
+
+BattleResult BattleSystem::startBossBattle(Player& player) {
+    UI::clearScreen();
+    UI::printFloorHeader(5);
+    cout << UI::RED << "The final floor is quiet... too quiet." << UI::RESET << "\n";
+    cout << UI::RED << "The Dungeon Boss blocks your path!" << UI::RESET << "\n";
+    UI::pressEnter();
+    
+    Boss boss({10, 5}, "Dungeon Boss", 220, 10, {1, 2}, 'B');
+    
+    while (player.isAlive() && !boss.isDead()) {
+        UI::clearScreen();
+        cout << UI::BOLD << "Boss Fight\n" << UI::RESET;
+        UI::printSeparator();
+        cout << boss.getName() << " HP: " << boss.getHP() << " | Phase: " << boss.getPhase() << "\n";
+        UI::printHPBar("Player", player.getHP(), player.getMaxHP());
+        UI::printSeparator();
+        
+        cout << "[1] Attack\n";
+        cout << "[2] Open inventory\n";
+        cout << "[3] Run/Quit\n";
+        cout << "Choice: ";
+        
+        int choice;
+        cin >> choice;
+        
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << UI::RED << "Invalid choice." << UI::RESET << "\n";
+            UI::pressEnter();
+            continue;
+        }
+        
+        if (choice == 2) {
+            InventoryMenu::open(player);
+            continue;
+        }
+        
+        if (choice == 3) {
+            return PlayerFlee;
+        }
+        
+        int playerDamage = player.getTotalAttack();
+        boss.changeHP(playerDamage);
+        cout << "You hit the " << boss.getName() << " for " << playerDamage << " damage.\n";
+        boss.updatePhase();
+        
+        if (boss.isDead()) {
+            break;
+        }
+        
+        boss.attack(player);
+        
+        if (!player.isAlive()) {
+            break;
+        }
+        
+        UI::pressEnter();
+    }
+    
+    if (boss.isDead()) {
+        return PlayerWon;
+    }
+    else {
+        return PlayerDied;
     }
 
 }
